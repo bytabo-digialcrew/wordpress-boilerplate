@@ -1,0 +1,29 @@
+{
+  "name": "freddie-qintana",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://johanneshoehn@bitbucket.org/graphicconcepts/freddie-qintana.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/graphicconcepts/freddie-qintana#readme",
+  "devDependencies": {
+    "bootstrap": "^3.3.7",
+    "grunt-cli": "^1.2.0",
+    "jquery": "^3.1.1"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-ftp-deploy": "^0.1.10",
+    "less-plugin-autoprefix": "^1.5.1"
+  }
+}
