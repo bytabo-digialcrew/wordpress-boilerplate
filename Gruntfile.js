@@ -47,17 +47,17 @@ module.exports = function(grunt) {
                         new (require('less-plugin-autoprefix'))({browsers: ["last 2 versions"]}),
                     ],
                     compress: false,
-                    banner: "/* \nTheme Name: Freddie Quintana\nAuthor: bytabo\nAuthor URI: http://bytabo.de\nText Domain: freddie-quintana\n*/"
+                    banner: "/* \nTheme Name: Themename\nAuthor: bytabo\nAuthor URI: http://bytabo.de\nText Domain: theme\n*/"
                 },
                 files: {
-                    'wordpress/wp-content/themes/freddie-quintana/style.css': files.less
+                    'wordpress/wp-content/themes/theme/style.css': files.less
                 }
             }
         },
         uglify: {
             my_target: {
                 files: {
-                    'wordpress/wp-content/themes/freddie-quintana/dist/main.js': files.js
+                    'wordpress/wp-content/themes/theme/dist/main.js': files.js
                 }
             }
         },
