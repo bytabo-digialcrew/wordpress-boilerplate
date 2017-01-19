@@ -29,23 +29,23 @@
  * Ersetze datenbankname_hier_einfuegen
  * mit dem Namen der Datenbank, die du verwenden möchtest.
  */
-define('DB_NAME', '');
+define('DB_NAME', 'test');
 
 /**
  * Ersetze benutzername_hier_einfuegen
  * mit deinem MySQL-Datenbank-Benutzernamen.
  */
-define('DB_USER', '');
+define('DB_USER', 'root');
 
 /**
  * Ersetze passwort_hier_einfuegen mit deinem MySQL-Passwort.
  */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'root');
 
 /**
  * Ersetze localhost mit der MySQL-Serveradresse.
  */
-define('DB_HOST', '');
+define('DB_HOST', '127.0.0.1');
 
 /**
  * Der Datenbankzeichensatz, der beim Erstellen der
@@ -79,10 +79,8 @@ define('SECURE_AUTH_SALT', 'HJ_nn)yU#W)9UK-X+KfE>-fKTahIZBYnj5% mX`49:9.Pm1Iv$6I
 define('LOGGED_IN_SALT',   'kVKtlcu tX|+(4qP2#)9(!<j8`Oo#|Rp2{*%>JX?2{.Oc#1y[adn7gGayPi&>BKP');
 define('NONCE_SALT',       '$e]oiSb<{/>ROEndi0@UfJ$<w+U~rg_:k}E`:L-;kyqFTVnC5htd__C|K0H&^%E$');
 
-if($_SERVER['HTTP_HOST'] == "localhost") {
-    define('WP_HOME', 'http://localhost');
-    define('WP_SITEURL', 'http://localhost');
-}
+define('WP_HOME', '//'.$_SERVER['HTTP_HOST']);
+define('WP_SITEURL', '//'.$_SERVER['HTTP_HOST']);
 
 /**#@-*/
 
@@ -93,7 +91,7 @@ if($_SERVER['HTTP_HOST'] == "localhost") {
  * verschiedene WordPress-Installationen betreiben.
  * Bitte verwende nur Zahlen, Buchstaben und Unterstriche!
  */
-$table_prefix  = '';
+$table_prefix  = 'by_';
 
 /**
  * Für Entwickler: Der WordPress-Debug-Modus.
