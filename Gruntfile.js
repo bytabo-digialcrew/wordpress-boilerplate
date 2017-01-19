@@ -42,11 +42,10 @@ module.exports = function(grunt) {
             development: {
                 options: {
                     paths: ['assets/css'],
-                    compress: true,
+                    compress: false,
                     plugins: [
                         new (require('less-plugin-autoprefix'))({browsers: ["last 2 versions"]}),
                     ],
-                    compress: false,
                     banner: "/* \nTheme Name: Themename\nAuthor: bytabo\nAuthor URI: http://bytabo.de\nText Domain: theme\n*/"
                 },
                 files: {
