@@ -3,6 +3,7 @@ For fast project setup
 
 ### 1. Download
 - create a new empty GIT repo, clone it
+(if you are a member of bytabo - digital crew link repo in Trello board)
 - Download repo as ZIP and move into repository
 - do an initial commit
 - do a "npm install"
