@@ -2,8 +2,8 @@
 For fast project setup
 
 ### 1. Download
-- Download repo and delete .git folder
-- create a new empty GIT repo, clone it and move all boilerplate contents (without .git folder) into it
+- create a new empty GIT repo, clone it
+- Download repo as ZIP and move into repository
 - do an initial commit
 - do a "npm install"
 
@@ -14,6 +14,7 @@ For fast project setup
 - rename following variables according to your theme name: 
     - Gruntfile.js -> replace "theme" everywhere in this file
     - rename the wordpress/wp-content/themes/theme folder
+    - edit themeinfo in Gruntfile.js (line ~ 49)
 - run "grunt" and start the watcher
 
 ### 3. Configuration
