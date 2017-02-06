@@ -1,6 +1,13 @@
 <?php
 
 
+//Menu
+require("php/wp_bootstrap_navwalker.php");
+register_nav_menus(array(
+    'primary' => __('Primary Menu', 'THEMENAME'),
+));
+
+
 add_filter('show_admin_bar', '__return_false');
 
 function get_the_slug($id = '')
@@ -29,6 +36,23 @@ function get_page_by_slug($slug = '')
     );
     return array_pop($page);
 }
+
+//check if string starts or ends with substring
+function startsWith($haystack, $needle)
+{
+    $length = strlen($needle);
+    return (substr($haystack, 0, $length) === $needle);
+}
+
+function endsWith($haystack, $needle)
+{
+    $length = strlen($needle);
+    if ($length == 0) {
+        return true;
+    }
+    return (substr($haystack, -$length) === $needle);
+}
+
 
 //e.g. call can be put_into_responsive_grid(array("col1", "col2"), 4, 'sm'); so a row with <div class="col-sm-3">col1</div> etc. is created
 function put_into_responsive_grid($array, $cols = 3, $breakpoint = 'md')
