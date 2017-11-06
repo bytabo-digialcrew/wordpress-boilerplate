@@ -15,7 +15,7 @@ files.exclusions = [
     'Thumbs.db',
     '.git',
     '.idea',
-    '.gitignore',
+    '.gitignore'
 ];
 
 
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'wordpress/wp-content/themes/theme/dist/main.js': files.js
+                    'wordpress/wp-content/themes/theme/script.js': files.js
                 }
             }
         },
