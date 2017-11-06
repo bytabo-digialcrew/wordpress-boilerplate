@@ -25,9 +25,5 @@ For fast project setup
 - activate your new theme
 - happy coding
 
-### 3. Publishing
-- edit .ftppass with your FTP data (root of FTP user must be theme.bytabo.de)
-- do a "grunt publish" to deploy on Webserver
-
 ### 4. Troubleshooting
 - if changes are not displayed or cached very hard, comment the caching lines in the wordpress/.htaccess out

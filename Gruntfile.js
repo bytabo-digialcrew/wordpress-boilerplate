@@ -9,6 +9,7 @@ files.js = [
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
     themeDirectory+'/js/script.js'
+
 ];
 files.exclusions = [
     '.DS_Store',
