@@ -45,7 +45,7 @@ define('DB_PASSWORD', 'root');
 /**
  * Ersetze localhost mit der MySQL-Serveradresse.
  */
-define('DB_HOST', '127.0.0.1');
+define('DB_HOST', '127.0.0.1:8889');
 
 /**
  * Der Datenbankzeichensatz, der beim Erstellen der

@@ -3,11 +3,11 @@ var themeDirectory = "wordpress/wp-content/themes/theme";
 
 
 files.less = [
-    themeDirectory+'/less/base.less',
+    themeDirectory+'/less/base.scss'
 ];
 files.js = [
     'node_modules/jquery/dist/jquery.min.js',
-    'node_modules/bootstrap/dist/js/bootstrap.min.js',
+    'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
     themeDirectory+'/js/script.js'
 ];
 files.exclusions = [
@@ -19,37 +19,14 @@ files.exclusions = [
 ];
 
 
-var options = {
-    livereload: {
-        host: 'localhost',
-        port: 9001,
-    }
-};
-
-var auth = {
-    host: '',
-    port: 21,
-    authKey: 'ftpdata'
-};
-
-
-
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        less: {
-            development: {
-                options: {
-                    paths: ['assets/css'],
-                    compress: false,
-                    plugins: [
-                        new (require('less-plugin-autoprefix'))({browsers: ["last 2 versions"]}),
-                    ],
-                    banner: "/* \nTheme Name: Themename\nAuthor: bytabo\nAuthor URI: http://bytabo.de\nText Domain: theme\n*/"
-                },
+        sass: {
+            dist: {
                 files: {
-                    'wordpress/wp-content/themes/theme/style.css': files.less
+                    'wordpress/wp-content/themes/theme/style.css': 'assets/scss/index.scss'
                 }
             }
         },
@@ -60,39 +37,23 @@ module.exports = function(grunt) {
                 }
             }
         },
-        'ftp-deploy': {
-            all: {
-                auth: auth,
-                src: 'wordpress',
-                dest: '/',
-                exclusions: files.exclusions
-            },
-            theme: {
-                auth: auth,
-                src: themeDirectory,
-                dest: themeDirectory,
-                exclusions: files.exclusions
-            }
-        },
         watch: {
             css: {
-                files: [themeDirectory+'/less/*.less'],
-                tasks: ['less']
+                files: ['assets/scss/*.scss'],
+                tasks: ['sass']
             },
             js: {
-                files: [themeDirectory+'/js/*.js'],
+                files: ['assets/js/*.js'],
                 tasks: ['uglify']
             }
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-ftp-deploy');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
-    grunt.registerTask('default', ['less', 'uglify', 'watch']);
-    grunt.registerTask('publish', ['ftp-deploy:theme']);
-    grunt.registerTask('publish-all', ['ftp-deploy:all']);
+    grunt.registerTask('default', ['sass', 'uglify', 'watch']);
 };

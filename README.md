@@ -7,6 +7,7 @@ For fast project setup
 - Download repo as ZIP and move into repository
 - do an initial commit
 - do a "npm install"
+- do "sudo gem install sass"
 
 ### 2. Setup
 - set server root to wordpress directory
